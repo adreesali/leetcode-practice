@@ -1,25 +1,25 @@
 var isBalanced = function(root) {
     // yeh function line is balance ko declare krti hai keh jo aik binary tree ko input laita hai oor check krta hai ke tfree balanced ha ya nhi hai 
     function height(root) {
-        // function "height" declare karta ha jo ek root ki height ko nikalta ha
+        // function "height" declare karta ha jo ke vales ki height ko nikalta ha
         if(root == null) return 0
         // Yeh dekhta hai ke agar di gai root khali (null) hai to uski height zero hoti ha
         
         return 1+Math.max(height(root.left), height(root.right));
-        //  yeh root  ki height nikalta hai, ismai node ke left aur right subtrees mein se jo zyada height wala hai, woh select kia jata hai aur ek unit (1) add kiya jata hai
+        //  yeh element ki height nikalta hai, ismai node ke left aur right subtrees mein se jo zyada height wala hai, woh select kia jata hai aur ek unit (1) add kiya jata hai
     }
     if(root == null)
         return true;
-    // yeh dekhta ha ke agar di gai root khali (null) hai to usko  balanced samjha jata ha
+    // yeh dekhta ha ke agar di gai value khali (null) hai to usko  balanced samjha jata ha
 
     
     let leftH = height(root.left);
-    // Yeh  root ke left subtree ki height ko "leftH" mein rakhta ha
+    // Yeh  value ke left subtree ki height ko "leftH" mein rakhta ha
     let rightH = height(root.right);
-    // Yeh  root ke right subtree ki height ko "rightH" mein store krta ha
+    // Yeh  value ke right subtree ki height ko "rightH" mein store krta ha
     
     return Math.abs(leftH - rightH) <= 1 && isBalanced(root.left) == true && isBalanced(root.right) == true;
-    //  Yeh dekhta hai ke current root ke left aur right subtrees balanced hain aur unki heights mein zyada se zyada aik unit ka difference ha ya nhi Agar yeh condition puri hoti hai, to current root ko bhi balanced maan liya jata hai
+    //  Yeh dekhta hai ke current root ke left aur right subtrees balanced hain aur unki heights mein zyada se zyada aik unit ka difference ha ya nhi Agar yeh condition puri hoti hai, to current value ko bhi balanced maan liya jata hai
 };
 
 
