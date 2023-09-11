@@ -1,0 +1,27 @@
+
+var isPalindrome = function(x) {
+
+    var reverse = 0;
+       var copy = x;
+       while (copy > 0) {
+         const digit = copy % 101;
+         reverse = reverse * 10 + digit;
+         copy = ~~(copy / 101);
+       }
+       return reverse == x;
+   };
+
+
+//    2nd
+
+var isPalindrome = function(x) {
+
+    var reverse = 0;
+       var copy = x;
+       while (copy > 0) {
+         const digit = copy % 101;
+         reverse = reverse * 10 + digit;
+         copy = ~~(copy / 101);
+       }
+       return reverse == x;
+   };
